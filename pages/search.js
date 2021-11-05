@@ -1,12 +1,15 @@
 import React from 'react';
 import tw from 'tailwind-styled-components';
+import Link from 'next/link';
 
 const Search = () => {
   return (
     <Wrapper>
-      <ButtonContainer>
-        <BackButton src='https://img.icons8.com/ios-filled/50/000000/left.png' />
-      </ButtonContainer>
+      <Link href='/'>
+        <ButtonContainer>
+          <BackButton src='https://img.icons8.com/ios-filled/50/000000/left.png' />
+        </ButtonContainer>
+      </Link>
       <InputContainer>
         <FromToIcons>
           <Circle src='https://img.icons8.com/ios-filled/50/9CA3AF/filled-circle.png' />
@@ -23,6 +26,9 @@ const Search = () => {
         <StarIcon src='https://img.icons8.com/ios-filled/50/ffffff/star--v1.png' />
         SavedPlaces
       </SavedPlaces>
+      <ConfirmLocation>
+        <ConfirmLocationButton>Confirm Locations</ConfirmLocationButton>
+      </ConfirmLocation>
       {/* Button Container */}
       {/* Input Container */}
       {/* Saved Places */}
@@ -42,7 +48,7 @@ bg-white px-4
 `;
 
 const BackButton = tw.img`
-h-12
+h-12 cursor-pointer
 `;
 
 const InputContainer = tw.div`
@@ -83,4 +89,12 @@ flex items-center bg-white px-4 py-2
 
 const StarIcon = tw.img`
 bg-gray-400 w-10 h-10 p-2 rounded-full mr-2
+`;
+
+const ConfirmLocation = tw.div`
+flex m-4 
+`;
+
+const ConfirmLocationButton = tw.div`
+flex bg-black text-white items-center text-2xl h-12 flex-1 justify-center cursor-pointer
 `;
